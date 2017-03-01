@@ -1,8 +1,12 @@
 <?php 
 	//echo "main".'<br>';
-	
-	
+	//exit();
 ?>
+
+<!-- name-for server operations id-html/css -->
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -39,13 +43,34 @@
 				 <input type="text" id="name" name="name" placeholder="Ваше имя"> <br/>
 				 <input type="text" id="email" name="email" placeholder="Ваш e-mail"> <br/>
 				 <input type="text" id="message" name="message" placeholder="Текст сообщения"> <br/>
-
-				 <button type="submit">Отправить</button>
-
+				
+				 <button type="submit">Отправить</button><br/>
+				
 			</form>
 			
+				
 			<div id="show_input">
-				<?php var_dump($_POST)?>
+				<?php 
+					//var_dump($_POST)
+				?>
+				<table id="messages">
+					<tbody>
+					<?php foreach($line as $key => $chunk){?>
+						<?php if(isset($chunk['file'])&&$chunk['file']!=''){ ?> 			
+							<tr>
+								<?php foreach($chunk as $key1 => $value1){ ?>
+									<td>
+										<?= $value1 ?>   <!-- выведение значения  -->
+										
+									</td>
+								
+								<?php } ?>
+							</tr>
+						<?php } ?>
+					<?php } ?>
+					</tbody>
+					<!--	<hr/>   -->
+				</table>
 			</div>
 			
 			
